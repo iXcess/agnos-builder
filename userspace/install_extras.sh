@@ -10,4 +10,4 @@ apt-fast update && apt-fast install -y --no-install-recommends \
   socat
 
 # color prompt
-sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' /home/comma/.bashrc
+sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' /home/kommu/.bashrc

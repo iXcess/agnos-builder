@@ -25,7 +25,7 @@ Maintainer: Andrei Radulescu andi.radulescu@gmail.com
 Depends: libicu66 (>= 66.1-1~), libdouble-conversion3 (>= 2.0.0), libssl1.1
 Replaces: qtbase5-dev, qtchooser, qt5-qmake, qtbase5-dev-tools
 Installed-Size: 0
-Homepage: https://comma.ai
+Homepage: https://kommu.ai
 Description: Qt 5.12.8 from Ubuntu 20.04
 EOF
 

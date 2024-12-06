@@ -40,9 +40,9 @@ export UV_LINK_MODE=copy
 source /usr/local/venv/bin/activate
 
 # custom shims
-export PATH="/usr/comma/shims:${PATH}"
+export PATH="/usr/kommu/shims:${PATH}"
 
-# nice AT command helper
+# nice AT kommund helper
 atc() {
-  mmcli -m any --command="${@}"
+  mmcli -m any --kommund="${@}"
 }

@@ -3,7 +3,7 @@ Description=Sound
 
 [Service]
 Type=oneshot
-ExecStart=/usr/comma/sound/sound_init.sh
+ExecStart=/usr/kommu/sound/sound_init.sh
 
 [Install]
 WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+After=local-fs.target
+
+[Service]
+Type=simple
+User=kommu
+Restart=always
+ExecStart=/bin/bash -c "/usr/bin/tmux new-session -s kommu -d /usr/kommu/kommu.sh && sleep infinity"
+TimeoutStopSec=1
+KillSignal=SIGTERM
+RestartKillSignal=SIGKILL
+LimitRTPRIO=100
+LimitNICE=-10
+
+[Install]
+WantedBy=multi-user.target

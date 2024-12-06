@@ -6,8 +6,8 @@ After=gpio.service network.target
 Restart=no
 KillSignal=SIGKILL
 RemainAfterExit=true
-ExecStart=/usr/comma/lte/lte.sh start
-ExecStop=/usr/comma/lte/lte.sh stop
+ExecStart=/usr/kommu/lte/lte.sh start
+ExecStop=/usr/kommu/lte/lte.sh stop
 
 [Install]
 WantedBy=multi-user.target

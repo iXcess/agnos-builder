@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/comma/set_ssh.sh
+ExecStart=/usr/kommu/set_ssh.sh
 
 [Install]
 WantedBy=multi-user.target

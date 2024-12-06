@@ -3,7 +3,7 @@ Description=GPIO export
 
 [Service]
 Type=oneshot
-ExecStart=/usr/comma/gpio.sh
+ExecStart=/usr/kommu/gpio.sh
 
 [Install]
 WantedBy=multi-user.target

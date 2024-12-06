@@ -24,12 +24,12 @@ ROOTFS_IMAGE_SIZE=4200M
 mkdir -p $BUILD_DIR $OUTPUT_DIR
 
 # Copy kernel modules
-if ! ls $OUTPUT_DIR/*.ko >/dev/null 2>&1; then
-  echo "Kernel modules missing. Run ./build_kernel.sh first"
-  exit 1
-fi
-cp $OUTPUT_DIR/wlan.ko $DIR/userspace/usr/comma
-cp $OUTPUT_DIR/snd*.ko $DIR/userspace/usr/comma/sound/
+#if ! ls $OUTPUT_DIR/*.ko >/dev/null 2>&1; then
+#  echo "Kernel modules missing. Run ./build_kernel.sh first"
+#  exit 1
+#fi
+#cp $OUTPUT_DIR/wlan.ko $DIR/userspace/usr/comma
+#cp $OUTPUT_DIR/snd*.ko $DIR/userspace/usr/comma/sound/
 
 # Download Ubuntu Base if not done already
 if [ ! -f $UBUNTU_FILE ]; then
@@ -122,7 +122,7 @@ echo "Setting network stuff"
 set_network_stuff() {
   cd $ROOTFS_DIR
   # Add hostname and hosts. This cannot be done in the docker container...
-  HOST=comma
+  HOST=kommu
   bash -c "ln -sf /proc/sys/kernel/hostname etc/hostname"
   bash -c "echo \"127.0.0.1    localhost.localdomain localhost\" > etc/hosts"
   bash -c "echo \"127.0.0.1    $HOST\" >> etc/hosts"

@@ -1,7 +1,7 @@
 [project]
 name = "agnos"
 version = "0.1.0"
-authors = [{name = "Vehicle Researcher", email = "user@comma.ai"}]
+authors = [{name = "Vehicle Researcher", email = "user@kommu.ai"}]
 requires-python = "~=3.11"
 description = ""
 dependencies = [

@@ -3,7 +3,7 @@ Description=Wifi
 
 [Service]
 Type=oneshot
-ExecStart=/sbin/insmod /usr/comma/wlan.ko
+ExecStart=/sbin/insmod /usr/kommu/wlan.ko
 
 [Install]
 WantedBy=multi-user.target

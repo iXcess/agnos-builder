@@ -22,5 +22,5 @@ apt install -yq /tmp/libjson-c2_0.11-4ubuntu2.6_arm64.deb
 # Remove apt cache
 rm -rf /var/lib/apt/lists/*
 
-USERNAME=comma
+USERNAME=kommu
 adduser $USERNAME netdev

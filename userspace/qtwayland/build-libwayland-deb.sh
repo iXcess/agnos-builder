@@ -26,7 +26,7 @@ Maintainer: Andrei Radulescu andi.radulescu@gmail.com
 Depends: libc6 (>= 2.17), libexpat1 (>= 2.0.1), libffi6 (>= 3.2)
 Replaces: libwayland-dev, libwayland-client0, libwayland-cursor0, libwayland-server0
 Installed-Size: 0
-Homepage: https://comma.ai
+Homepage: https://kommu.ai
 Description: libwayland client0, cursor0, server0 and dev 1.9.0-1 from Ubuntu Xenial
 EOF
 

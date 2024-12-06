@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-USERNAME=comma
-PASSWD=comma
-HOST=comma
+USERNAME=kommu
+PASSWD=kommu
+HOST=kommu
 
 # Create identification file
 touch /TICI
@@ -42,9 +42,9 @@ systemctl enable serial-getty@ttyS0.service
 echo "net.ipv4.conf.all.rp_filter = 2" >> /etc/sysctl.conf
 echo "vm.dirty_expire_centisecs = 200" >> /etc/sysctl.conf
 
-# raise comma user's process priority limits
-echo "comma - rtprio 100" >> /etc/security/limits.conf
-echo "comma - nice -10" >> /etc/security/limits.conf
+# raise kommu user's process priority limits
+echo "kommu - rtprio 100" >> /etc/security/limits.conf
+echo "kommu - nice -10" >> /etc/security/limits.conf
 
 # Locale setup
 locale-gen en_US.UTF-8
@@ -118,7 +118,7 @@ mkdir /persist && chown $USERNAME:$USERNAME /persist
 systemctl disable systemd-pstore.service
 
 # Nopasswd sudo
-echo "comma ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "kommu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # setup /bin/sh symlink
 ln -sf /bin/bash /bin/sh

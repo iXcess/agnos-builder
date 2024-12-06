@@ -2,9 +2,9 @@
 After=multi-user.target
 
 [Service]
-User=comma
+User=kommu
 Restart=no
-ExecStart=/usr/local/venv/bin/python -u /usr/comma/phantom_touch_logger.py
+ExecStart=/usr/local/venv/bin/python -u /usr/kommu/phantom_touch_logger.py
 
 [Install]
 WantedBy=multi-user.target
