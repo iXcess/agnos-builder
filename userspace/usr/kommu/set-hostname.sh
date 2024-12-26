@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
-SERIAL="$(cat /proc/cmdline | sed -e 's/^.*androidboot.serialno=//' -e 's/ .*$//')"
+SERIAL="$(grep 'Serial' /proc/cpuinfo | sed 's/.*: //')"
+
 echo "serial: '$SERIAL'"
 sysctl kernel.hostname="kommu-$SERIAL"

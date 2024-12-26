@@ -33,5 +33,5 @@ if [[ "$AGNOS_DESCRIPTION" == *-* ]]; then
 	AGNOS_DESCRIPTION="${AGNOS_DESCRIPTION%-*} (${AGNOS_DESCRIPTION#*-})"
 fi
 
-printf "Welcome to AGNOS v%s\n" "$AGNOS_DESCRIPTION"
+printf "Welcome to RK-AGNOS v%s\n" "$AGNOS_DESCRIPTION"
 printf "Based on %s (%s %s %s)\n" "$DISTRIB_DESCRIPTION" "$(uname -o)" "$(uname -r)" "$(uname -m)"
