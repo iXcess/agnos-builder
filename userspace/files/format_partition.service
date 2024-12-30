@@ -1,0 +1,11 @@
+[Unit]
+Description=Check and format /dev/mmcblk0pN as ext4
+Before=local-fs.target
+
+[Service]
+ExecStart=/usr/kommu/format_ext4_partition.sh
+Type=oneshot
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

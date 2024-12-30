@@ -1,12 +1,7 @@
 #!/bin/bash -e
 
-# Enable DSP support services
-systemctl enable adsp
-systemctl enable cdsp
-systemctl enable adsprpcd
-systemctl enable cdsprpcd
-
 # Enable our services
+systemctl enable format_partition.service
 systemctl enable fs_setup.service
 systemctl enable serial-hostname.service
 systemctl enable kommu.service
@@ -15,14 +10,10 @@ systemctl enable lte.service
 systemctl enable sound.service
 systemctl enable weston.service
 systemctl enable weston-ready.service
-systemctl enable wifi.service
-systemctl enable init-qcom.service
-systemctl enable power_drop_monitor.service
-systemctl enable brightnessd.service
+# systemctl enable wifi.service
 systemctl enable ssh-param-watcher.path
 systemctl enable ssh-param-watcher.service
 systemctl enable logrotate-hourly.timer
-systemctl enable phantom_touch_logger.service
 
 # Disable some of our services
 systemctl disable agnos-tests.service
@@ -34,6 +25,9 @@ systemctl disable vnstat.service
 # Disable SSH by default
 systemctl disable ssh
 
+# Disable systemrw mounting that prevents ka2 from booting
+# systemctl disable systemrw.mount
+
 # Disable all useless systemctl services
 systemctl disable hostapd.service
 systemctl disable apt-daily-upgrade.service
@@ -41,7 +35,7 @@ systemctl disable apt-daily.service
 systemctl disable apt-daily-upgrade.timer
 systemctl disable apt-daily.timer
 systemctl disable serial-getty@ttyS0.service
-systemctl disable wlan_daemon.service
+#systemctl disable wlan_daemon.service
 systemctl disable remote-fs.target
 systemctl disable remote-fs-pre.target
 systemctl disable e2scrub_all.timer
@@ -50,7 +44,7 @@ systemctl disable motd-news.service
 systemctl disable motd-news.timer
 systemctl disable multipathd.service
 systemctl disable multipathd.socket
-systemctl disable chgrp-diag.service
+#systemctl disable chgrp-diag.service
 systemctl disable lvm2-monitor.service
 systemctl mask systemd-backlight@.service
 systemctl disable dpkg-db-backup.timer
@@ -83,4 +77,4 @@ systemctl disable smartd.service
 systemctl disable smartd.service
 
 systemctl disable console-setup.service
-systemctl disable sfsconfig.service
+#systemctl disable sfsconfig.service

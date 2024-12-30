@@ -5,6 +5,10 @@ UBUNTU_BASE_URL="https://cdimage.ubuntu.com/ubuntu-base/releases/24.04/release/"
 UBUNTU_FILE="ubuntu-base-24.04.1-base-arm64.tar.gz"
 UBUNTU_FILE_CHECKSUM="7700539236d24c31c3eea1d5345eba5ee0353a1bac7d91ea5720b399b27f3cb4"
 
+#UBUNTU_BASE_URL="https://cdimage.ubuntu.com/ubuntu-base/releases/jammy/release/"
+#UBUNTU_FILE="ubuntu-base-22.04.5-base-arm64.tar.gz"
+#UBUNTU_FILE_CHECKSUM="075d4abd2817a5023ab0a82f5cb314c5ec0aa64a9c0b40fd3154ca3bfdae979f"
+
 # Make sure we're in the correct spot
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 cd $DIR
@@ -18,18 +22,10 @@ OUT_IMAGE="$OUTPUT_DIR/system.img"
 
 # the partition is 10G, but openpilot's updater didn't always handle the full size
 # openpilot fix, shipped in 0.9.8 (8/18/24): https://github.com/commaai/openpilot/pull/33320
-ROOTFS_IMAGE_SIZE=4200M
+ROOTFS_IMAGE_SIZE=4400M
 
 # Create temp dir if non-existent
 mkdir -p $BUILD_DIR $OUTPUT_DIR
-
-# Copy kernel modules
-#if ! ls $OUTPUT_DIR/*.ko >/dev/null 2>&1; then
-#  echo "Kernel modules missing. Run ./build_kernel.sh first"
-#  exit 1
-#fi
-#cp $OUTPUT_DIR/wlan.ko $DIR/userspace/usr/comma
-#cp $OUTPUT_DIR/snd*.ko $DIR/userspace/usr/comma/sound/
 
 # Download Ubuntu Base if not done already
 if [ ! -f $UBUNTU_FILE ]; then
@@ -54,7 +50,7 @@ fi
 
 # Check agnos-builder Dockerfile
 export DOCKER_BUILDKIT=1
-docker buildx build -f Dockerfile.agnos --check $DIR
+docker buildx build -f Dockerfile.agnos --check $DIR --memory=4g
 
 # Start build and create container
 echo "Building agnos-builder docker image"

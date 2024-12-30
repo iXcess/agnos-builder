@@ -24,4 +24,4 @@ mv /home /usr/default && mkdir /home
 # setup mount points
 rm -rf /tmp && mkdir /tmp
 rm -rf /cache && mkdir /cache
-rm -rf /systemrw && mkdir /systemrw
+#rm -rf /systemrw && mkdir /systemrw

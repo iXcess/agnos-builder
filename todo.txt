@@ -1,0 +1,8 @@
+Note:
+1. Removed hardware_setup.sh to see if /lib/firmware will be back
+2. userspace/kommu/gpio.sh needs to be configured correctly
+3. edit userspace/kommu/kommu.sh
+
+Last done:
+1. checked all the Dockerfile.agnos commands up to line 159
+

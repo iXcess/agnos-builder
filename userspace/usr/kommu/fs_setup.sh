@@ -18,7 +18,7 @@ touch /data/etc/timezone
 touch /data/etc/localtime
 mkdir -p /data/etc/NetworkManager/system-connections
 
-# /data/media - NVME mount point
+# /data/media - EMMC mount point
 mkdir -p /data/media
 
 # /data/ssh
@@ -30,6 +30,6 @@ rm -rf /data/tmp/
 mkdir -p /data/tmp/
 
 # /data/persist
-if [[ ! -d /data/persist ]]; then
-  sudo cp -r /system/persist /data
-fi
+#if [[ ! -d /data/persist ]]; then
+#  sudo cp -r /system/persist /data
+#fi

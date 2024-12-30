@@ -5,8 +5,7 @@ PASSWD=kommu
 HOST=kommu
 
 # Create identification file
-touch /TICI
-touch /AGNOS
+touch /KA2
 
 # Add armhf as supported architecture
 dpkg --add-architecture armhf
@@ -194,8 +193,32 @@ apt-fast install --no-install-recommends -yq \
     isc-dhcp-client \
     iputils-ping \
     rsyslog \
+    rfkill \
     kmod \
     wpasupplicant \
     hostapd \
     libgtk2.0-dev \
     libxml2:armhf \
+
+# Joshua Riek's ppa
+add-apt-repository -y ppa:jjriek/rockchip-multimedia
+add-apt-repository -y ppa:jjriek/rockchip
+apt-fast update -yq
+
+# Install panfork
+add-apt-repository -y ppa:jjriek/panfork-mesa
+apt-fast install --no-install-recommends -yq \
+  mali-g610-firmware
+apt-get -y dist-upgrade
+
+# Install jjriek's rk3588 related libs
+apt-fast install --no-install-recommends -yq \
+    libmali-g610-x11 \
+    camera-engine-rkaiq-rk3588 \
+    v4l-utils \
+    gstreamer1.0-rockchip \
+    wiringpi-opi \
+    libwiringpi2-opi \
+    libwiringpi-opi-dev \
+
+
