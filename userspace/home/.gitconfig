@@ -1,6 +1,6 @@
 [user]
   email = device@kommu.ai
-  name = Comma Device
+  name = Kommu Device
 [push]
   default = simple
 [pull]

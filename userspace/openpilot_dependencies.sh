@@ -52,8 +52,6 @@ apt-fast install --no-install-recommends -yq \
     libzstd-dev \
     locales \
     nethogs \
-    ocl-icd-libopencl1 \
-    ocl-icd-opencl-dev \
     opencl-headers \
     pkg-config \
     portaudio19-dev \

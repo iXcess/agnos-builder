@@ -50,7 +50,7 @@ fi
 
 # Check agnos-builder Dockerfile
 export DOCKER_BUILDKIT=1
-docker buildx build -f Dockerfile.agnos --check $DIR --memory=4g
+docker buildx build -f Dockerfile.agnos --check $DIR --memory=8g
 
 # Start build and create container
 echo "Building agnos-builder docker image"

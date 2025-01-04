@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICES=("/dev/mmcblk0p6" "/dev/mmcblk0p7" "/dev/mmcblk0p8" "/dev/mmcblk0p10")
+DEVICES=("/dev/mmcblk0p6" "/dev/mmcblk0p7" "/dev/mmcblk0p8")
 
 # Check if the device is ext4
 is_ext4() {

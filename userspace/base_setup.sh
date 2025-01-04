@@ -40,6 +40,7 @@ systemctl enable serial-getty@ttyS0.service
 # set kernel params
 echo "net.ipv4.conf.all.rp_filter = 2" >> /etc/sysctl.conf
 echo "vm.dirty_expire_centisecs = 200" >> /etc/sysctl.conf
+echo "sched_rt_runtime_us = -1" >> /etc/sysctl.conf
 
 # raise kommu user's process priority limits
 echo "kommu - rtprio 100" >> /etc/security/limits.conf
@@ -213,12 +214,11 @@ apt-get -y dist-upgrade
 
 # Install jjriek's rk3588 related libs
 apt-fast install --no-install-recommends -yq \
-    libmali-g610-x11 \
     camera-engine-rkaiq-rk3588 \
     v4l-utils \
     gstreamer1.0-rockchip \
-    wiringpi-opi \
-    libwiringpi2-opi \
-    libwiringpi-opi-dev \
+    libmali-g610-x11 \
+    mesa-opencl-icd \
+
 
 
